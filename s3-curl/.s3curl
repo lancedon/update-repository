@@ -1,0 +1,8 @@
+%awsSecretAccessKeys = (
+    # personal account
+    s3_bash_scripts => {
+        id => 'your ID',
+        key => 'your pass',
+    },
+);
+

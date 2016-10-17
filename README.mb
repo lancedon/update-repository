@@ -1,0 +1,16 @@
+# update-repository
+
+The objective of this script is make a automatic checkout from one git branch to other using a file server (in this case a S3)
+
+A little explanation about the big picture of why this script is used:
+
+In my case I created a server logic in Amazon to add / remove instances is a Auto scaling group based on the utilization of memory, due that I need a script to always keep the instance in the last branch without I connect in the server.
+
+To do that when I want deploy a work, the flow is like that:
+1) Go on master branch and pull the scripts.
+2) Create a new branch and made all changes on it.
+3) Merge this branch with the master (for the case we have more developers in the same project).
+4) Create a new branch from the master (this branch will be the production branch)
+
+PS: I know this is not a good Git practice, but in my case we want have backups in branchs, so if something was wrong we can only change the branch and not need change the GIT Head for the last working commit.
+
